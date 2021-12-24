@@ -16,32 +16,42 @@ class BuildProducts extends Migration
         $products[] = [
             "sku" => "000001",
             "name" => "BV Lean leather ankle boots",
-            "category" => 1, # boots
-            "price" => 89000
+            "category_id" => 1, # boots
+            "price" => 89000,
+            "created_at" => date_create(),
+            "updated_at" => date_create(),
         ];
         $products[] = [
             "sku" => "000002",
             "name" => "BV Lean leather ankle boots",
-            "category" => 1, # boots
-            "price" => 99000
+            "category_id" => 1, # boots
+            "price" => 99000,
+            "created_at" => date_create(),
+            "updated_at" => date_create(),
         ];
         $products[] = [
             "sku" => "000003",
             "name" => "Ashlington leather ankle boots",
-            "category" => 1, # boots
-            "price" => 71000
+            "category_id" => 1, # boots
+            "price" => 71000,
+            "created_at" => date_create(),
+            "updated_at" => date_create(),
         ];
         $products[] = [
             "sku" => "000004",
             "name" => "Naima embellished suede sandals",
-            "category" => 3, # sandals
-            "price" => 79500
+            "category_id" => 3, # sandals
+            "price" => 79500,
+            "created_at" => date_create(),
+            "updated_at" => date_create(),
         ];
         $products[] = [
             "sku" => "000005",
             "name" => "Nathane leather sneakers",
-            "category" => 2, # sneakers
-            "price" => 59000
+            "category_id" => 2, # sneakers
+            "price" => 59000,
+            "created_at" => date_create(),
+            "updated_at" => date_create(),
         ];
 
         Product::insert($products);

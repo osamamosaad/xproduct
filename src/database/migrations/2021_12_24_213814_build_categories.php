@@ -14,9 +14,21 @@ class BuildCategories extends Migration
     {;
         Category::insert(
             [
-                ["name" => "boots"],
-                ["name" => "sneakers"],
-                ["name" => "sandals"],
+                [
+                    "name" => "boots",
+                    "created_at" => date_create(),
+                    "updated_at" => date_create(),
+                ],
+                [
+                    "name" => "sneakers",
+                    "created_at" => date_create(),
+                    "updated_at" => date_create(),
+                ],
+                [
+                    "name" => "sandals",
+                    "created_at" => date_create(),
+                    "updated_at" => date_create(),
+                ],
             ]
         );
     }
