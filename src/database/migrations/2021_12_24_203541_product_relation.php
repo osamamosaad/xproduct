@@ -26,6 +26,6 @@ class ProductRelation extends Migration
      */
     public function down()
     {
-        DB::statement("ALTER TABLE product DROP FOREIGN KEY product_fk_category_id`;`");
+        DB::statement("ALTER TABLE product DROP FOREIGN KEY `product_fk_category_id`;");
     }
 }
