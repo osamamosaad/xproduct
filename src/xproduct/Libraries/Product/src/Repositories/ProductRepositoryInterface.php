@@ -2,6 +2,7 @@
 
 namespace Xproduct\Libraries\Product\Repositories;
 
+use Xproduct\Libraries\Common\RequestInterface;
 use Xproduct\Libraries\Product\Dtos\Product;
 
 interface ProductRepositoryInterface
@@ -22,7 +23,7 @@ interface ProductRepositoryInterface
      *
      * @return array
      */
-    public function getByFilter($request): array;
+    public function getByFilter(RequestInterface $request): array;
 
     /**
      * @param int $categoryId

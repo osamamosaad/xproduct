@@ -4,19 +4,16 @@ namespace Xproduct\Infrastructure\Repositories;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Xproduct\Infrastructure\Adapters\ServiceContainer;
 use Xproduct\Infrastructure\Models\Product as ProductModel;
+use Xproduct\Libraries\Common\RequestInterface;
 use Xproduct\Libraries\Product\Dtos\Product;
 use Xproduct\Libraries\Product\Repositories\ProductRepositoryInterface;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-    private $productModel;
-
-    public function __construct(ProductModel $productModel, ServiceContainer $serviceContainer)
-    {
-        $this->productModel = $productModel;
-        $this->serviceContainer = $serviceContainer;
+    public function __construct(
+        private ProductModel $productModel
+    ) {
     }
 
     /**
@@ -27,7 +24,7 @@ class ProductRepository implements ProductRepositoryInterface
         // here stor product
     }
 
-    public function getByFilter($request): array
+    public function getByFilter(RequestInterface $request): array
     {
         $queryBuilder = $this->productModel
             ->select(
@@ -44,9 +41,12 @@ class ProductRepository implements ProductRepositoryInterface
             ->leftjoin('discount', 'product_discount.discount_id', '=', 'discount.id')
             ->groupBy("product.id");
 
-        if ($request["filter"]["priceLessThan"]) {
-            $price = $request["filter"]["priceLessThan"];
+        if ($price = $request->getFilter("priceLessThan")) {
             $queryBuilder->where("price", "<=", $price);
+        }
+
+        if ($category = $request->getFilter("category")) {
+            $queryBuilder->where("category.name", $category);
         }
 
         return $this->hydrateData($queryBuilder->get());
@@ -98,8 +98,7 @@ class ProductRepository implements ProductRepositoryInterface
                 ->setPrice($product->price)
                 ->setFinalPrice(Arr::get($product, "final_price"))
                 ->setDiscountPercentage(Arr::get($product, "discount_percentage"))
-                ->setCurrency("EUR")
-                ;
+                ->setCurrency("EUR");
         }
         return $collection;
     }

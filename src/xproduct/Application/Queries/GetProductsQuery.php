@@ -2,6 +2,7 @@
 
 namespace Xproduct\Application\Queries;
 
+use Xproduct\Libraries\Common\RequestInterface;
 use Xproduct\Libraries\Product\Repositories\ProductRepositoryInterface;
 
 class GetProductsQuery
@@ -21,7 +22,7 @@ class GetProductsQuery
      *
      * @return array
      */
-    public function get($requestData)
+    public function get(RequestInterface $requestData)
     {
         return $this->productRepo->getByFilter($requestData);
     }

@@ -15,8 +15,7 @@ class ProductController extends Controller
      */
     public function list(GetProductsQuery $getProductsQuery)
     {
-        $requestData = $this->request->all();
-        $response = $getProductsQuery->get($requestData);
+        $response = $getProductsQuery->get($this->getRequest());
 
         return (new ProductSchema($response))->response(Response::HTTP_OK);
     }
