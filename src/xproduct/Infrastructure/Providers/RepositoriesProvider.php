@@ -6,11 +6,13 @@ use Illuminate\Support\ServiceProvider;
 use Xproduct\Infrastructure\Repositories\{
     CategoryRepository,
     DiscountRepository,
+    ProductDiscountRepository,
     ProductRepository,
 };
 
 use Xproduct\Libraries\{
     Discount\Repositories\DiscountRepositoryInterface,
+    Discount\Repositories\ProductDiscountRepositoryInterface,
     Product\Repositories\ProductRepositoryInterface,
 };
 use Xproduct\Libraries\Product\Repositories\CategoryRepositoryInterface;
@@ -27,6 +29,11 @@ class RepositoriesProvider extends ServiceProvider
         $this->app->singleton(
             DiscountRepositoryInterface::class,
             DiscountRepository::class
+        );
+
+        $this->app->singleton(
+            ProductDiscountRepositoryInterface::class,
+            ProductDiscountRepository::class
         );
 
         $this->app->singleton(
