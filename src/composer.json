@@ -17,7 +17,12 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Xproduct\\Application\\": "xproduct/Application/",
+            "Xproduct\\Infrastructure\\": "xproduct/Infrastructure/",
+            "Xproduct\\Libraries\\Clients\\": "xproduct/Libraries/Clients",
+            "Xproduct\\Libraries\\Product\\": "xproduct/Libraries/Product/src",
+            "Xproduct\\Libraries\\Discount\\": "xproduct/Libraries/Discount/src"
         }
     },
     "autoload-dev": {
