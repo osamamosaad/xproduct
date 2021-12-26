@@ -16,6 +16,12 @@ class DiscountController extends Controller
      */
     public function create(AddDiscount $discountLib)
     {
+        $this->validate($this->request, [
+            'type'          => 'required',
+            'item'          => 'required',
+            'percentage'    => 'required',
+        ]);
+
         $data = $this->getRequestedData();
         $discountLib->execute($data);
 
