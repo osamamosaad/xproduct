@@ -32,6 +32,6 @@ class Discount extends Migration
      */
     public function down()
     {
-        //
+        DB::statement('DROP TABLE `discount`');
     }
 }
