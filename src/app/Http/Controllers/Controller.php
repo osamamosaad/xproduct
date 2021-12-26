@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\ApiSchema\SchemaBase;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\Lumen\Routing\Controller as BaseController;
+use Xproduct\Infrastructure\Adapters\Request as InfrastructurRequestInterface;
 
 class Controller extends BaseController
 {
@@ -13,17 +12,18 @@ class Controller extends BaseController
      * @param Request $request
      */
     public function __construct(
-        protected Request $request
+        protected Request $request,
+        protected InfrastructurRequestInterface $infrastructurRequest,
     ) {
     }
 
     /**
      * To get Requested data from JsonApi document
      *
-     * @return array
+     * @return InfrastructurRequestInterface
      */
-    public function getRequestedData()
+    public function getRequest()
     {
-        return json_decode($this->request->getContent(), true);
+        return $this->infrastructurRequest->setData($this->request->all());
     }
 }
