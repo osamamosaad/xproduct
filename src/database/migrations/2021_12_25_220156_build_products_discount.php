@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Xproduct\Application\Commands\AddDiscount;
+use Xproduct\Infrastructure\Adapters\Request;
 
 class BuildProductsDiscount extends Migration
 {
@@ -27,7 +28,7 @@ class BuildProductsDiscount extends Migration
         ];
 
         foreach ($data as $discount) {
-            $addDiscountCommand->execute($discount);
+            $addDiscountCommand->execute((new Request())->setData($discount));
         }
     }
 
