@@ -2,6 +2,7 @@
 
 namespace Xproduct\Application\Commands;
 
+use Xproduct\Libraries\Common\RequestInterface;
 use Xproduct\Libraries\Discount\Discount as DiscountLib;
 use Xproduct\Libraries\Discount\Dtos\Discount;
 
@@ -20,12 +21,12 @@ class AddDiscount
      *
      * @return void
      */
-    public function execute(array $data): void
+    public function execute(RequestInterface $request): void
     {
         $discountDto = new Discount();
-        $discountDto->setItem($data["item"]);
-        $discountDto->setType($data["type"]);
-        $discountDto->setPercentage($data["percentage"]);
+        $discountDto->setItem($request->getAttr("item"));
+        $discountDto->setType($request->getAttr("type"));
+        $discountDto->setPercentage($request->getAttr("percentage"));
 
         $this->discountLib->execute($discountDto);
     }

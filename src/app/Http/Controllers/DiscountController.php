@@ -22,8 +22,7 @@ class DiscountController extends Controller
             'percentage'    => 'required',
         ]);
 
-        $data = $this->getRequestedData();
-        $discountLib->execute($data);
+        $discountLib->execute($this->getRequest());
 
         return response("", Response::HTTP_CREATED);
     }
