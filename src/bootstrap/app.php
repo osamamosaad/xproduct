@@ -100,6 +100,7 @@ $app->configure('database');
 
 $app->register(Xproduct\Infrastructure\Providers\RepositoriesProvider::class);
 $app->register(Xproduct\Infrastructure\Providers\ClientsProvider::class);
+$app->register(Xproduct\Infrastructure\Providers\CommonServicesProvider::class);
 
 
 /*

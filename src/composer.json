@@ -21,6 +21,7 @@
             "Xproduct\\Application\\": "xproduct/Application/",
             "Xproduct\\Infrastructure\\": "xproduct/Infrastructure/",
             "Xproduct\\Libraries\\Clients\\": "xproduct/Libraries/Clients",
+            "Xproduct\\Libraries\\Common\\": "xproduct/Libraries/Common",
             "Xproduct\\Libraries\\Product\\": "xproduct/Libraries/Product/src",
             "Xproduct\\Libraries\\Discount\\": "xproduct/Libraries/Discount/src"
         }
