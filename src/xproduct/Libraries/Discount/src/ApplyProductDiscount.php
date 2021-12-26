@@ -20,9 +20,9 @@ class ApplyProductDiscount
     }
 
     /**
-     * Execute creating company
+     * Execute creating discount
      *
-     * @param Company $companyDto
+     * @param Discount $discountDto
      *
      * @return void
      */

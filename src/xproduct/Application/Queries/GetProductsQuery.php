@@ -16,9 +16,9 @@ class GetProductsQuery
     }
 
     /**
-     * To handle company data that comes from presentation layer
+     * To handle Product data that comes from presentation layer
      *
-     * @param array $requestData
+     * @param RequestInterface $requestData
      *
      * @return array
      */
