@@ -8,7 +8,7 @@ use Xproduct\Libraries\Discount\Repositories\ProductDiscountRepositoryInterface;
 class ProductDiscountRepository implements ProductDiscountRepositoryInterface
 {
     public function __construct(
-        private ProductDiscountModel $invoiceModel,
+        private ProductDiscountModel $productDiscountModel,
     ) {
     }
 
@@ -17,13 +17,13 @@ class ProductDiscountRepository implements ProductDiscountRepositoryInterface
      */
     public function store(int $productId, int $discountId, float $finalPrice): void
     {
-        $invoiceModel = $this->invoiceModel->newInstance();
-        $invoiceModel->product_id = $productId;
-        $invoiceModel->discount_id = $discountId;
-        $invoiceModel->final_price = $finalPrice;
-        $invoiceModel->created_at = date_create();
-        $invoiceModel->updated_at = date_create();
+        $productDiscountModel = $this->productDiscountModel->newInstance();
+        $productDiscountModel->product_id = $productId;
+        $productDiscountModel->discount_id = $discountId;
+        $productDiscountModel->final_price = $finalPrice;
+        $productDiscountModel->created_at = date_create();
+        $productDiscountModel->updated_at = date_create();
 
-        $invoiceModel->save();
+        $productDiscountModel->save();
     }
 }

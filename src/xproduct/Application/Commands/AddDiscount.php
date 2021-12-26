@@ -15,7 +15,7 @@ class AddDiscount
     }
 
     /**
-     * To handle company data that comes from presentation layer
+     * To handle discount data that comes from presentation layer
      *
      * @param array $data
      *
