@@ -98,8 +98,8 @@ $app->configure('database');
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
-
 $app->register(Xproduct\Infrastructure\Providers\RepositoriesProvider::class);
+$app->register(Xproduct\Infrastructure\Providers\ClientsProvider::class);
 
 
 /*
