@@ -24,7 +24,6 @@ class Controller extends BaseController
      */
     public function getRequestedData()
     {
-        $contentDecoded = json_decode($this->request->getContent(), true);
-        return Arr::get($contentDecoded, "data", []);
+        return json_decode($this->request->getContent(), true);
     }
 }
