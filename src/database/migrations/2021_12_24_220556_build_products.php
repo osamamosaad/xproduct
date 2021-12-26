@@ -18,6 +18,7 @@ class BuildProducts extends Migration
             "name" => "BV Lean leather ankle boots",
             "category_id" => 1, # boots
             "price" => 89000,
+            "currency" => "EUR",
             "created_at" => date_create(),
             "updated_at" => date_create(),
         ];
@@ -26,6 +27,7 @@ class BuildProducts extends Migration
             "name" => "BV Lean leather ankle boots",
             "category_id" => 1, # boots
             "price" => 99000,
+            "currency" => "EUR",
             "created_at" => date_create(),
             "updated_at" => date_create(),
         ];
@@ -34,6 +36,7 @@ class BuildProducts extends Migration
             "name" => "Ashlington leather ankle boots",
             "category_id" => 1, # boots
             "price" => 71000,
+            "currency" => "EUR",
             "created_at" => date_create(),
             "updated_at" => date_create(),
         ];
@@ -42,6 +45,7 @@ class BuildProducts extends Migration
             "name" => "Naima embellished suede sandals",
             "category_id" => 3, # sandals
             "price" => 79500,
+            "currency" => "EUR",
             "created_at" => date_create(),
             "updated_at" => date_create(),
         ];
@@ -50,6 +54,7 @@ class BuildProducts extends Migration
             "name" => "Nathane leather sneakers",
             "category_id" => 2, # sneakers
             "price" => 59000,
+            "currency" => "EUR",
             "created_at" => date_create(),
             "updated_at" => date_create(),
         ];

@@ -17,10 +17,12 @@ class Product extends Migration
                 `id` INT NOT NULL AUTO_INCREMENT ,
                 `sku` VARCHAR(20) NOT NULL ,
                 `name` VARCHAR(100) NOT NULL ,
-                `price` INT NOT NULL ,
+                `price` FLOAT NOT NULL ,
+                `currency` VARCHAR(4) NOT NULL,
                 `category_id` INT NOT NULL ,
                 `created_at` DATETIME NOT NULL ,
                 `updated_at` DATETIME NOT NULL ,
+                INDEX `product-ix-price` (price),
             PRIMARY KEY (`id`)) ENGINE = InnoDB;'
         );
     }
