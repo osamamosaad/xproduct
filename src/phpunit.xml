@@ -6,7 +6,12 @@
          testdox="true"
 >
     <testsuites>
-
+        <testsuite name="Discount Service">
+            <directory suffix="Test.php">xproduct/Libraries/Discount/tests/</directory>
+        </testsuite>
+        <testsuite name="Clients">
+            <directory suffix="Test.php">xproduct/Libraries/Clients/</directory>
+        </testsuite>
     </testsuites>
     <php>
         <env name="APP_ENV" value="testing"/>
