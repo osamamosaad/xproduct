@@ -13,6 +13,7 @@ class Discount
      */
     public function __construct(
         private DiscountRepositoryInterface $discountRepo,
+        private ApplyProductDiscount $applyProductDiscount,
     ) {
     }
 
@@ -26,5 +27,6 @@ class Discount
     public function execute(DiscountDto $discountDto)
     {
         $discount = $this->discountRepo->store($discountDto);
+        $this->applyProductDiscount->execute($discount);
     }
 }
