@@ -1,4 +1,4 @@
-# The Problem
+# Problem
 Implement a REST API endpoint that given a list of products, applies some discounts to them
 and can be filtered.
 
@@ -73,7 +73,7 @@ discount applied and discount_percentage represents the applied discount with th
 }
 ```
 
-# The solution
+# Solution
 
 ## Application Architecture:
 - I built this app following DDD especially Transaction Script pattern with hexagonal architecture.
